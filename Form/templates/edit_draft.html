@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Draft Form{% endblock %}
+
+{% block content %}
+<style>
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<h1>Edit Draft Form</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}  
+    <button type="submit">Submit</button>
+    <button type="submit" name="save_draft">Save as Draft</button>
+</form>
+{% endblock %}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AdminLTE Application{% endblock %}</title>
+    <style>
+        body {
+            background-color: #22748d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'my_form_view' %}">Home</a></li>
+                <li><a href="{% url 'draft_list' %}">Drafts</a></li>
+                <li><a href="{% url 'submitted_list' %}">Submitted</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}View Submitted Form{% endblock %}
+
+{% block content %}
+<h1>View Submitted Form</h1>
+<table>
+    <tbody>
+        {% for field in form %}
+        <tr>
+            <th>{{ field.label }}</th>
+            <td>{{ field.value }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
